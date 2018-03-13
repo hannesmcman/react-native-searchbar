@@ -97,7 +97,7 @@ export default class Search extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      input: props.text,
+      input: props.text || '',
       show: props.showOnLoad,
       top: new Animated.Value(
         props.showOnLoad ? 0 : INITIAL_TOP + props.heightAdjust
