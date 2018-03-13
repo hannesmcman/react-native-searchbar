@@ -57,7 +57,8 @@ export default class Search extends Component {
     keyboardType: PropTypes.string,
     fontFamily: PropTypes.string,
     allDataOnEmptySearch: PropTypes.bool,
-    editable: PropTypes.bool
+    editable: PropTypes.bool,
+    text: PropTypes.string,
   };
 
   static defaultProps = {
@@ -89,13 +90,14 @@ export default class Search extends Component {
     allDataOnEmptySearch: false,
     backCloseSize: 28,
     fontSize: 20,
-    editable: true
+    editable: true,
+    text: '',
   };
 
   constructor(props) {
     super(props);
     this.state = {
-      input: '',
+      input: props.text,
       show: props.showOnLoad,
       top: new Animated.Value(
         props.showOnLoad ? 0 : INITIAL_TOP + props.heightAdjust
